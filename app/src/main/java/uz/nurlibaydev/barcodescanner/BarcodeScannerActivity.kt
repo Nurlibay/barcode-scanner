@@ -1,6 +1,7 @@
 package uz.nurlibaydev.barcodescanner
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.journeyapps.barcodescanner.CaptureManager
@@ -30,6 +31,9 @@ class BarcodeScannerActivity : AppCompatActivity() {
                     else R.color.white
                 )
             )
+        }
+        binding.barCodeView.decodeSingle {
+            Log.d("barcode_result_here", it.toString())
         }
     }
 
